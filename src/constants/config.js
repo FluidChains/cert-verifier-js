@@ -11,7 +11,7 @@ const Race = true;
 
 const CheckForUnmappedFields = true;
 
-const PublicKey = 'ecdsa-koblitz-pubkey:1';
+const PublicKey = 'ecdsa-koblitz-pubkey:C';
 
 export default {
   SecurityContextUrl,
