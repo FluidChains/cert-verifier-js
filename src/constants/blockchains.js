@@ -11,6 +11,16 @@ export const BLOCKCHAINS = {
       raw: `https://blockchain.info/rawtx/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
     }
   },
+  exos: {
+    code: 'exos',
+    name: 'exos',
+    prefixes: ['6a20', 'OP_RETURN '],
+    signatureValue: 'exosMainnet',
+    transactionTemplates: {
+      full: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
+      raw: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
+    }
+  },
   ethmain: {
     code: 'ethmain',
     name: 'Ethereum',

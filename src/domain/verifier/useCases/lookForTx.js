@@ -8,6 +8,7 @@ export default function lookForTx (transactionId, chain, certificateVersion) {
   let BlockchainExplorers;
   switch (chain) {
     case BLOCKCHAINS.bitcoin.code:
+    case BLOCKCHAINS.exos.code:
     case BLOCKCHAINS.regtest.code:
     case BLOCKCHAINS.testnet.code:
     case BLOCKCHAINS.mocknet.code:

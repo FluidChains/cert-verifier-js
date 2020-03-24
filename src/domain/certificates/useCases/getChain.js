@@ -11,6 +11,9 @@ function getMerkleRoot2019Chain (anchor) {
     },
     eth: {
       chainName: BLOCKCHAINS.ethmain.name
+    },
+    exos: {
+      chainName: BLOCKCHAINS.exos.name
     }
   };
   const dataArray = anchor.split(':');
@@ -26,7 +29,7 @@ function getMerkleRoot2019Chain (anchor) {
 }
 
 function defaultChainAssumption (address = '') {
-  return addresses.isMainnet(address) ? BLOCKCHAINS.bitcoin : BLOCKCHAINS.testnet;
+  return addresses.isMainnet(address) ? BLOCKCHAINS.exos : BLOCKCHAINS.testnet;
 }
 
 function getChainObject (chainCodeSignatureValue) {
