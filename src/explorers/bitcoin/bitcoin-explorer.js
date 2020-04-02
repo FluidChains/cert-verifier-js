@@ -28,11 +28,7 @@ export async function getBitcoinTransactionFromApi (apiName, transactionId, chai
 }
 
 const API_TRANSACTION_DATA_GENERATORS = {
-  [TRANSACTION_APIS.Bitpay]: generateTransactionDataFromBitpayResponse,
-  [TRANSACTION_APIS.Blockcypher]: generateTransactionDataFromBlockcypherResponse,
-  [TRANSACTION_APIS.Blockexplorer]: generateTransactionDataFromBlockexplorerResponse,
   [TRANSACTION_APIS.Blockexplorerexos]: generateTransactionDataFromBlockexplorerexosResponse,
-  [TRANSACTION_APIS.Blockstream]: generateTransactionDataFromBlockstreamResponse
 };
 
 function getTransactionDataGeneratorPerApi (apiName) {
