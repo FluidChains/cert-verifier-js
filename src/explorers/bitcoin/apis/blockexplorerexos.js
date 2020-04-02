@@ -12,12 +12,11 @@ export function generateTransactionDataFromBlockexplorerexosResponse (jsonRespon
   const outputs = jsonResponse.outputs;
   var lastOutput = null;
   for (var i = 0, l = outputs.length; i < l; i++) {
-    if (outputs[i].asm.includes('OP_RETURN')) {
+    if (outputs[i].scriptPubKey.includes('OP_RETURN')) {
       lastOutput = outputs[i];
     }
   }
-  const issuingAddress = jsonResponse.outputs[0].address;
-  const opReturnScript = stripHashPrefix(lastOutput.asm, BLOCKCHAINS.bitcoin.prefixes);
+  const opReturnScript = stripHashPrefix(lastOutput.scriptPubKey, BLOCKCHAINS.bitcoin.prefixes);
   const revokedAddresses = outputs
     .filter(output => !!output.address)
     .map(output => output.address);
