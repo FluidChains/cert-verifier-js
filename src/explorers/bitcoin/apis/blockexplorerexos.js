@@ -16,6 +16,7 @@ export function generateTransactionDataFromBlockexplorerexosResponse (jsonRespon
       lastOutput = outputs[i];
     }
   }
+  const issuingAddress = jsonResponse.inputs[0].address;
   const opReturnScript = stripHashPrefix(lastOutput.scriptPubKey, BLOCKCHAINS.bitcoin.prefixes);
   const revokedAddresses = outputs
     .filter(output => !!output.address)
