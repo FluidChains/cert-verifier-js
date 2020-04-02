@@ -2,13 +2,13 @@ import { BLOCKCHAINS, SUB_STEPS } from '../../../constants';
 import { TransactionData, VerifierError } from '../../../models';
 import { getText } from '../../../domain/i18n/useCases';
 import { stripHashPrefix } from '../../utils/stripHashPrefix';
-import { timestampToDateObject } from '../../../helpers/date';
+import { dateToUnixTimestamp } from '../../../helpers/date';
 
 export function generateTransactionDataFromBlockexplorerexosResponse (jsonResponse) {
   if (jsonResponse.confirmations < 1) {
     throw new VerifierError(SUB_STEPS.fetchRemoteHash, getText('errors', 'parseBlockstreamResponse'));
   }
-  const time = timestampToDateObject(jsonResponse.timestamp);
+  const time = dateToUnixTimestamp(jsonResponse.dateTime);
   const outputs = jsonResponse.outputs;
   var lastOutput = null;
   for (var i = 0, l = outputs.length; i < l; i++) {
