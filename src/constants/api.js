@@ -13,7 +13,6 @@ const TRANSACTIONS_APIS_URLS = {
     mainnet: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_ID_PLACEHOLDER}`,
     testnet: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_ID_PLACEHOLDER}`
   }
-
 };
 
 export {
