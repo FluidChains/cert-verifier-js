@@ -1,6 +1,6 @@
 {
   "name": "@fluidchains/cert-verifier-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Javascript library for verifying Blockcerts",
   "repository": {
     "type": "git",
