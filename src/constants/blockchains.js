@@ -15,7 +15,7 @@ export const BLOCKCHAINS = {
     code: 'exos',
     name: 'exos',
     prefixes: ['6a20', 'OP_RETURN '],
-    signatureValue: 'exosMainnet',
+    signatureValue: 'EXOSMainnet',
     transactionTemplates: {
       full: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
       raw: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
