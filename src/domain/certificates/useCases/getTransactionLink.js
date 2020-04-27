@@ -10,10 +10,10 @@ import { TRANSACTION_TEMPLATE_ID_PLACEHOLDER } from '../../../constants/blockcha
  * @param getRawVersion
  * @returns {*}
  */
-export default function getTransactionLink (transactionId, chainObject, getRawVersion = false) {
+export default function getTransactionLink (transactionId, chainObject, getRawVersion = false, getVanityVersion = false ) {
   if (!transactionId || !chainObject) {
     return '';
   }
-  const rawTransactionLinkTemplate = chainObject.transactionTemplates[getRawVersion ? 'raw' : 'full'];
+  const rawTransactionLinkTemplate = chainObject.transactionTemplates[getVanityVersion ? 'vanity' : getRawVersion ? 'raw' : 'full'];
   return rawTransactionLinkTemplate.replace(TRANSACTION_TEMPLATE_ID_PLACEHOLDER, transactionId);
 }

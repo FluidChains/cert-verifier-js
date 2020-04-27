@@ -135,5 +135,6 @@ export default class Certificate {
     this.transactionId = domain.certificates.getTransactionId(this.receipt);
     this.rawTransactionLink = domain.certificates.getTransactionLink(this.transactionId, this.chain, true);
     this.transactionLink = domain.certificates.getTransactionLink(this.transactionId, this.chain);
+    this.vanityTransactionLink = domain.certificates.getTransactionLink(this.transactionId, this.chain, false, true)
   }
 }

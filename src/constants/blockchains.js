@@ -18,7 +18,8 @@ export const BLOCKCHAINS = {
     signatureValue: 'EXOSMainnet',
     transactionTemplates: {
       full: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
-      raw: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
+      raw: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
+      vanity: `https://blockexplorer.exos.to/#/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
     }
   },
   ethmain: {
