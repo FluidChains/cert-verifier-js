@@ -22,6 +22,17 @@ export const BLOCKCHAINS = {
       vanity: `https://blockexplorer.exos.to/#/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
     }
   },
+  ruta: {
+    code: 'ruta',
+    name: 'ruta',
+    prefixes: ['6a20', 'OP_RETURN '],
+    signatureValue: 'RUTAMainnet',
+    transactionTemplates: {
+      full: `https://core.certifico.io/ruta/api/Node/getrawtransaction?trxid=${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}&verbose=true`,
+      raw: `https://core.certifico.io/ruta/api/Node/getrawtransaction?trxid=${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}&verbose=true`,
+      vanity: `https://blockexplorer.rutax.co/#/ruta/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
+    }
+  },
   ethmain: {
     code: 'ethmain',
     name: 'Ethereum',

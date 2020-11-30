@@ -2,6 +2,10 @@ import { getEtherScanFetcher } from './ethereum';
 import { getBitcoinTransactionFromApi } from './bitcoin/bitcoin-explorer';
 import { TRANSACTION_APIS } from '../constants';
 
+const RutanioExplorers = [
+  (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.CertificoRuta, transactionId, chain),
+];
+
 const BitcoinExplorers = [
   (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Blockcypher, transactionId, chain),
   (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Bitpay, transactionId, chain),
@@ -19,4 +23,4 @@ const BlockchainExplorersWithSpentOutputInfo = [
   (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Blockcypher, transactionId, chain)
 ];
 
-export { BitcoinExplorers, EthereumExplorers, BlockchainExplorersWithSpentOutputInfo };
+export { RutanioExplorers, BitcoinExplorers, EthereumExplorers, BlockchainExplorersWithSpentOutputInfo };
