@@ -1,0 +1,79 @@
+name: "Generate new release"
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  release:
+    name: Generate new release
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      working-directory: .
+      dist-directory: ./dist
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\/v/}
+
+      - name: Setup Node
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - name: Node Version
+        run: node --version
+
+      - name: Npm Install
+        run: npm install
+        working-directory: ${{ env.working-directory }}
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload 'verifier.js'
+        id: upload-dev-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.dist-directory }}/verifier.js.apk
+          asset_name: verifier.js
+          asset_content_type: application/vnd.android.package-archive
+
+      - name: Upload 'verifier-es.js'
+        id: upload-dev-debug-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.dist-directory }}/verifier-es.js.apk
+          asset_name: verifier-es.js
+          asset_content_type: application/vnd.android.package-archive
+
+      - name: Upload 'verifier-iife.js'
+        id: upload-prod-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.dist-directory }}/verifier-iife.js.apk
+          asset_name: verifier-iife.js
+          asset_content_type: application/vnd.android.package-archive
