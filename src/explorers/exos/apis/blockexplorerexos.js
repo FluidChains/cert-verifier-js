@@ -4,7 +4,7 @@ import { getText } from '../../../domain/i18n/useCases';
 import { stripHashPrefix } from '../../utils/stripHashPrefix';
 import { dateToUnixTimestamp } from '../../../helpers/date';
 
-export function generateTransactionDataFromBlockexplorerexosResponse (jsonResponse) {
+export function generateTransactionDataFromBlockexplorerExosResponse (jsonResponse) {
   if (jsonResponse.confirmations < 1) {
     throw new VerifierError(SUB_STEPS.fetchRemoteHash, getText('errors', 'parseBlockstreamResponse'));
   }
@@ -22,9 +22,9 @@ export function generateTransactionDataFromBlockexplorerexosResponse (jsonRespon
     .filter(output => !!output.address)
     .map(output => output.address);
   return new TransactionData(
-    opReturnScript,
-    issuingAddress,
-    time,
-    revokedAddresses
-  );
+      opReturnScript,
+      issuingAddress,
+      time,
+      revokedAddresses
+    );
 }

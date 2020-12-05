@@ -7,7 +7,6 @@ import { generateTransactionDataFromBitpayResponse } from './apis/bitpay';
 import { generateTransactionDataFromBlockcypherResponse } from './apis/blockcypher';
 import { generateTransactionDataFromBlockexplorerResponse } from './apis/blockexplorer';
 import { generateTransactionDataFromBlockstreamResponse } from './apis/blockstream';
-import { generateTransactionDataFromBlockexplorerexosResponse } from './apis/blockexplorerexos';
 
 export async function getBitcoinTransactionFromApi (apiName, transactionId, chain) {
   const isTestnet = chain !== BLOCKCHAINS.bitcoin.code;
@@ -28,7 +27,6 @@ export async function getBitcoinTransactionFromApi (apiName, transactionId, chai
 }
 
 const API_TRANSACTION_DATA_GENERATORS = {
-  [TRANSACTION_APIS.Blockexplorerexos]: generateTransactionDataFromBlockexplorerexosResponse,
 };
 
 function getTransactionDataGeneratorPerApi (apiName) {

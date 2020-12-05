@@ -1,26 +1,26 @@
 import { getEtherScanFetcher } from './ethereum';
-import { getBitcoinTransactionFromApi } from './bitcoin/bitcoin-explorer';
+import { getExosTransactionFromApi } from './exos/exos-explorer';
+import { getRutanioTransactionFromApi } from './rutanio/rutanio-explorer';
+
 import { TRANSACTION_APIS } from '../constants';
 
 const RutanioExplorers = [
-  (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.CertificoRuta, transactionId, chain),
+  (transactionId, chain) => getRutanioTransactionFromApi(TRANSACTION_APIS.CertificoRuta, transactionId, chain),
+];
+
+const ExosExplorers = [
+  (transactionId, chain) => getExosTransactionFromApi(TRANSACTION_APIS.CertificoExos, transactionId, chain),
+  (transactionId, chain) => getExosTransactionFromApi(TRANSACTION_APIS.BlockexplorerExos, transactionId, chain),
 ];
 
 const BitcoinExplorers = [
-  (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Blockcypher, transactionId, chain),
-  (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Bitpay, transactionId, chain),
-  (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Blockexplorerexos, transactionId, chain),
-  (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Blockexplorer, transactionId, chain),
-  (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Blockstream, transactionId, chain)
 ];
 
 const EthereumExplorers = [
-  (transactionId, chain) => getEtherScanFetcher(transactionId, chain)
 ];
 
 // for legacy (pre-v2) Blockcerts
 const BlockchainExplorersWithSpentOutputInfo = [
-  (transactionId, chain) => getBitcoinTransactionFromApi(TRANSACTION_APIS.Blockcypher, transactionId, chain)
 ];
 
-export { RutanioExplorers, BitcoinExplorers, EthereumExplorers, BlockchainExplorersWithSpentOutputInfo };
+export { RutanioExplorers, ExosExplorers, BitcoinExplorers, EthereumExplorers, BlockchainExplorersWithSpentOutputInfo };

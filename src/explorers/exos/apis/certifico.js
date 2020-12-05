@@ -4,7 +4,7 @@ import { getText } from '../../../domain/i18n/useCases';
 import { stripHashPrefix } from '../../utils/stripHashPrefix';
 import { timestampToDateObject } from '../../../helpers/date';
 
-export function generateTransactionDataFromCertificoRutaResponse (jsonResponse) {
+export function generateTransactionDataFromCertificoExosResponse (jsonResponse) {
   if (jsonResponse.confirmations < 1) {
     throw new VerifierError(SUB_STEPS.fetchRemoteHash, getText('errors', 'parseBlockstreamResponse'));
   }
@@ -17,7 +17,7 @@ export function generateTransactionDataFromCertificoRutaResponse (jsonResponse) 
     }
   }
   const issuingAddress = jsonResponse.inputs[0].inputAddress;
-  const opReturnScript = stripHashPrefix(lastOutput.scriptPubKeyAsm, BLOCKCHAINS.ruta.prefixes);
+  const opReturnScript = stripHashPrefix(lastOutput.scriptPubKeyAsm, BLOCKCHAINS.exos.prefixes);
   const revokedAddresses = jsonResponse.outputs
     .filter(output => !!output.address)
     .map(output => output.address);

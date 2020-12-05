@@ -1,6 +1,6 @@
 import { BLOCKCHAINS, CERTIFICATE_VERSIONS, CONFIG, SUB_STEPS } from '../../../constants';
 import { VerifierError } from '../../../models';
-import { BitcoinExplorers, BlockchainExplorersWithSpentOutputInfo, EthereumExplorers } from '../../../explorers';
+import { RutanioExplorers, ExosExplorers, BitcoinExplorers, EthereumExplorers, BlockchainExplorersWithSpentOutputInfo } from '../../../explorers';
 import PromiseProperRace from '../../../helpers/promiseProperRace';
 import { getText } from '../../i18n/useCases';
 
@@ -8,11 +8,16 @@ export default function lookForTx (transactionId, chain, certificateVersion) {
   let BlockchainExplorers;
   switch (chain) {
     case BLOCKCHAINS.bitcoin.code:
-    case BLOCKCHAINS.exos.code:
     case BLOCKCHAINS.regtest.code:
     case BLOCKCHAINS.testnet.code:
     case BLOCKCHAINS.mocknet.code:
       BlockchainExplorers = BitcoinExplorers;
+      break;
+    case BLOCKCHAINS.exos.code:
+      BlockchainExplorers = ExosExplorers;
+      break;
+    case BLOCKCHAINS.ruta.code:
+      BlockchainExplorers = RutanioExplorers;
       break;
     case BLOCKCHAINS.ethmain.code:
     case BLOCKCHAINS.ethropst.code:

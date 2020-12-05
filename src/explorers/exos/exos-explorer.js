@@ -3,9 +3,10 @@ import { buildTransactionApiUrl } from '../../services/transaction-apis';
 import { request } from '../../services/request';
 import { VerifierError } from '../../models';
 import { getText } from '../../domain/i18n/useCases';
-import { generateTransactionDataFromCertificoRutaResponse } from './apis/certifico';
+import { generateTransactionDataFromBlockexplorerExosResponse } from './apis/blockexplorerexos';
+import { generateTransactionDataFromCertificoExosResponse } from  './apis/certifico';
 
-export async function getRutanioTransactionFromApi (apiName, transactionId, chain) {
+export async function getExosTransactionFromApi (apiName, transactionId, chain) {
   const isTestnet = chain !== BLOCKCHAINS.ruta.code;
   const requestUrl = buildTransactionApiUrl(apiName, transactionId, isTestnet);
 
@@ -24,7 +25,7 @@ export async function getRutanioTransactionFromApi (apiName, transactionId, chai
 }
 
 const API_TRANSACTION_DATA_GENERATORS = {
-  [TRANSACTION_APIS.CertificoRuta]: generateTransactionDataFromCertificoRutaResponse,
+  [TRANSACTION_APIS.CertificoExos]: generateTransactionDataFromCertificoExosResponse
 };
 
 function getTransactionDataGeneratorPerApi (apiName) {

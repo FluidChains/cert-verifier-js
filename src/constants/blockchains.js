@@ -17,9 +17,9 @@ export const BLOCKCHAINS = {
     prefixes: ['6a20', 'OP_RETURN '],
     signatureValue: 'EXOSMainnet',
     transactionTemplates: {
-      full: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
-      raw: `https://blockexplorer.exos.to/api/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
-      vanity: `https://blockexplorer.exos.to/#/exos/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
+      full: `https://core.certifico.io/exos/api/query/transaction/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
+      raw: `https://core.certifico.io/exos/api/query/transaction/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
+      vanity: `https://explorer.certifico.io/exos/explorer/transaction/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
     }
   },
   ruta: {
@@ -28,9 +28,9 @@ export const BLOCKCHAINS = {
     prefixes: ['6a20', 'OP_RETURN '],
     signatureValue: 'RUTAMainnet',
     transactionTemplates: {
-      full: `https://core.certifico.io/ruta/api/Node/getrawtransaction?trxid=${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}&verbose=true`,
-      raw: `https://core.certifico.io/ruta/api/Node/getrawtransaction?trxid=${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}&verbose=true`,
-      vanity: `https://blockexplorer.rutax.co/#/ruta/transactions/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
+      full: `https://core.certifico.io/ruta/api/query/transaction/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
+      raw: `https://core.certifico.io/ruta/api/query/transaction/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`,
+      vanity: `https://explorer.certifico.io/ruta/explorer/transaction/${TRANSACTION_TEMPLATE_ID_PLACEHOLDER}`
     }
   },
   ethmain: {
