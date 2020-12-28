@@ -13,7 +13,7 @@ export const BLOCKCHAINS = {
   },
   exos: {
     code: 'exos',
-    name: 'exos',
+    name: 'OpenExO',
     prefixes: ['6a20', 'OP_RETURN '],
     signatureValue: 'EXOSMainnet',
     transactionTemplates: {
@@ -24,7 +24,7 @@ export const BLOCKCHAINS = {
   },
   ruta: {
     code: 'ruta',
-    name: 'ruta',
+    name: 'Rutanio',
     prefixes: ['6a20', 'OP_RETURN '],
     signatureValue: 'RUTAMainnet',
     transactionTemplates: {
