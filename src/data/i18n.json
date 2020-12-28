@@ -44,7 +44,7 @@
         "description": "Mocknet credentials are used for test purposes only. They are not recorded on a blockchain, and they should not be considered verified Blockcerts."
       },
       "blockchain": {
-        "label": "Verified",
+        "label": "Blockchain Verified",
         "description": "This is a valid ${chain} certificate.",
         "linkText": "View transaction link"
       }
@@ -126,7 +126,7 @@
         "description": "Le mode Mocknet est utilisé à des fins de tests uniquement. Ce Blockcert n'a pas été enregistré sur une blockchain, et en tant que tel ne peut pas être considéré un Blockcert valide."
       },
       "blockchain": {
-        "label": "Vérifié",
+        "label": "Blockchain Vérifié",
         "description": "Ceci est un certificat ${chain} valide.",
         "linkText": "Voir la transaction"
       }
@@ -208,7 +208,7 @@
         "description": "Las credenciales de Mocknet se usan solo con fines de prueba. No se graban en una cadena de bloques, y no se deben considerar Blockcerts Verificados."
       },
       "blockchain": {
-        "label": "Verificado",
+        "label": "Blockchain Verificado",
         "description": "Este es un certificado válido de ${chain}.",
         "linkText": "Ver enlace de transacción"
       }
@@ -290,7 +290,7 @@
         "description": "Il-kredenzjali tal-Mocknet jintużaw biss għal skopijiet ta 'ttestjar. Dawn mhumiex irreġistrati fuq blockchain, u ma għandhomx jiġu kkunsidrati bħala blockcerts verifikati."
       },
       "blockchain": {
-        "label": "Ivverifikat",
+        "label": "Blockchain Ivverifikat",
         "description": "Dan huwa ċertifikat ${chain} huwa validu.",
         "linkText": "Ara l-link tat-transazzjoni"
       }
@@ -372,7 +372,7 @@
         "description": "La modalità Mocknet è utilizzata solo dagli emittenti per testare il loro flusso di lavoro localmente. Questo Blockcert non è stato registrato su una blockchain e non dovrebbe essere considerato un Blockcert verificato."
       },
       "blockchain": {
-        "label": "Verificato",
+        "label": "Blockchain Verificato",
         "description": "Questo è un certificato ${chain} valido.",
         "linkText": "Vedi la transazione"
       }
